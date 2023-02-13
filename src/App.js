@@ -1,25 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import store from './store/store' 
+import Balance from './components/balance/balance';
+import Inout from './components/inout/inout';
+import History from './components/tranhis/transhis';
+import Trans from './components/transaction/transaction';
+import { Provider, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+ let [cpesy ,setcPesy] = useState(0)
+ let [income ,setIncome] = useState(0)
+ let [expense ,setExpense] = useState(0)
+
+
+
+
+
+
+
+
+
+
+ return( <>
+ <Provider  store={store}>
+ <div className='bodyA'>
+    <div className='mainA' >
+    <h1> Expense Tracker </h1>
     </div>
-  );
+   
+    <Balance ></Balance>
+
+    <Inout></Inout>
+    <History></History>
+    <Trans></Trans>
+
+  
+</div>
+</Provider>
+   
+</> );
+    
 }
 
+
 export default App;
+
+
+

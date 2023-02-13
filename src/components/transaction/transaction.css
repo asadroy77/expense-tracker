@@ -1,0 +1,10 @@
+.formmain{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.formmain input {
+    width: 100%;
+    height: 30px;
+}
